@@ -21,15 +21,6 @@
 <script>
 export default {
   name: "IndexPage",
-  async asyncData({ $axios }) {
-    let ip = await $axios.$get(`/exam.guests`);
-    return { ip };
-  },
-  computed: {
-    myData() {
-      return this.ip.items.map((v) => v.first_name);
-    },
-  },
   methods: {},
   mounted() {},
 };
