@@ -4,7 +4,7 @@ export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
   server: {
-    port: 8080 // Specifyin port for api CORS policy
+    port: 8080 // Specifying port for api CORS policy
   },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {

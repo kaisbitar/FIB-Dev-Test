@@ -3,7 +3,7 @@
     <vue-excel-xlsx
       :data="items"
       :columns="columns"
-      :file-name="'order-details'"
+      :file-name="fileName"
       :file-type="'xlsx'"
       :sheet-name="'sheetname'"
     >
@@ -17,27 +17,8 @@
 <script>
 export default {
   name: "appTableDownload",
-  props: ["items"],
-  data: () => ({
-    columns: [
-      {
-        label: "id",
-        field: "id",
-      },
-      {
-        label: "name",
-        field: "name",
-      },
-      {
-        label: "Price",
-        field: "price",
-      },
-      {
-        label: "Quantity",
-        field: "quantity",
-      },
-    ],
-  }),
+  props: ["items", "columns", "fileName"],
+  data: () => ({ }),
 };
 </script>
 

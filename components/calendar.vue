@@ -65,12 +65,14 @@
               mdi-close
             </v-icon>
             <v-toolbar-title
-              v-html="`${selectedEvent.name}`"
-            ></v-toolbar-title>
+            >
+            {{`${selectedEvent.name} - ${new Date(selectedEvent.start).toDateString()}`}}
+            </v-toolbar-title>
+            
           </v-toolbar>
           <v-card-text>
             <p><b>Email: </b><a :href="'mailto:' + selectedEvent.email">{{selectedEvent.email}}</a></p>
-            <AppDownloadBtn class="float-right mt-n10" :items="selectedEventOrders.items" :columns="excelColumns"/>
+            <AppDownloadBtn class="float-right mt-n10" :items="selectedEventOrders.items" :columns="excelColumns" :fileName="`${selectedEvent.name} - ${new Date(selectedEvent.start).toDateString()}`"/>
             <AppTable :items="selectedEventOrders.items" :headers="ordersTableHeaders" />
           </v-card-text>
         </v-card>
